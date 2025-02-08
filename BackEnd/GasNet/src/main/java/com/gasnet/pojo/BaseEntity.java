@@ -20,11 +20,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BaseUser {
+public class BaseEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "user_id")
-	private Long userId;
+	@Column(name = "id")
+	private Long Id;
 	@CreationTimestamp
 	@Column(name = "created_on")
 	private LocalDate createdOn;

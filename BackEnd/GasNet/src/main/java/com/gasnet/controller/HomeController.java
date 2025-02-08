@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.gasnet.dtos.ApiResponse;
 import com.gasnet.dtos.AuthRequest;
 import com.gasnet.dtos.AuthResp;
-import com.gasnet.dtos.ServiceResp;
 import com.gasnet.dtos.UserDto;
 import com.gasnet.security.JwtUtils;
 import com.gasnet.service.UserService;
@@ -25,7 +24,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/user")
-public class TestController {
+public class HomeController {
 	@Autowired
 	private UserService userService;
 	@Autowired

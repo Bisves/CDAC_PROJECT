@@ -5,19 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class ServiceResp {
+public class VendorResponse {
 	
 	private UserDto userDto;
 	private ApiResponse apiResponse;
-	
-	public ServiceResp(UserDto userDto){
-		this.userDto = userDto;
-	}
-	public ServiceResp(ApiResponse apiResponse){
-		this.apiResponse = apiResponse;
-	}
+	private SubscriptionDto subscriptionDto;
 }

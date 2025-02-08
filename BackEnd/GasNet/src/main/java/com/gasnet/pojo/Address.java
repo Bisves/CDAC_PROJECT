@@ -17,18 +17,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "Address")
-public class Address {
-	@Id
-	@Column(name = "address_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long addressId;
-	@Column(name = "address",length = 100)
+public class Address extends BaseEntity{
+	
+	@Column(name = "address",length = 100,nullable = false)
 	private String Address;
-	@Column(name = "city",length = 30)
+	@Column(name = "city",length = 30,nullable = false)
 	private String City;
-	@Column(name = "state",length = 30)
+	@Column(name = "state",length = 30,nullable = false)
 	private String State;
-	@Column(name = "pincode")
+	@Column(name = "pincode",nullable = false)
 	private Integer PinCode;
 	
 }

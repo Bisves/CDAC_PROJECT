@@ -1,16 +1,17 @@
-package com.gasnet.dtos;
+package com.gasnet.pojo;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthResp {
+@Getter
+@Setter
+public class Vendor extends User{
 	
-	private ServiceResp serviceResp;
-	private String jwt;
+	 private List<Subscription> subscriptions;
 }

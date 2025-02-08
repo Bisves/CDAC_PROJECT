@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		user.setUserStatus(Status.ACTIVE);
 		User savedUser = userDao.save(user);
-		return new ApiResponse("User registered with ID " + savedUser.getUserId());
+		return new ApiResponse("User registered with ID " + savedUser.getId());
 	}
 
 }

@@ -32,7 +32,7 @@ public class SecurityConfiguration {
 	        .authorizeHttpRequests
 	        (request -> 
 	        request.requestMatchers("/products/view",
-	        		"/user/sign-up","/user/sign-in",
+	        		"/user/sign-up","/user/sign-in","/vendor/**","/customer/**",
 					"/v*/api-doc*/**","/swagger-ui/**").permitAll() 
 	        //required explicitly for JS clients (eg React app - to permit pre flight requests)
 	        .requestMatchers(HttpMethod.OPTIONS).permitAll()
