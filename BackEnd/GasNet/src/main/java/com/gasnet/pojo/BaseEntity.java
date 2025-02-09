@@ -26,9 +26,9 @@ public class BaseEntity {
 	@Column(name = "id")
 	private Long Id;
 	@CreationTimestamp
-	@Column(name = "created_on")
+	@Column(name = "created_on",nullable = false)
 	private LocalDate createdOn;
 	@UpdateTimestamp
-	@Column(name = "updated_on")
+	@Column(name = "updated_on",nullable = false)
 	private LocalDate updatedOn;
 }

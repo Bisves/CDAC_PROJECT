@@ -2,6 +2,7 @@ package com.gasnet.service;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.gasnet.dao.UserDao;
@@ -22,6 +23,9 @@ public class VendorServiceImpl implements VendorService {
 	private ModelMapper modelMapper;
 	@Autowired
 	private UserDao userDao;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Override
 	public ApiResponse updateVendorDetails(Long vendorId, UpdateVendorDto updateVendorDto) {
 		User vendor = userDao.findById(vendorId).orElseThrow(
@@ -29,7 +33,7 @@ public class VendorServiceImpl implements VendorService {
 		vendor.setUserName(updateVendorDto.getUserName());
 		vendor.setFirstName(updateVendorDto.getFirstName());
 		vendor.setLastName(updateVendorDto.getLastName());
-		vendor.setPassword(updateVendorDto.getPassword());
+		vendor.setPassword(passwordEncoder.encode(updateVendorDto.getPassword()));
 		vendor.setPhoneNo(updateVendorDto.getPhoneNo());
 		Address address = modelMapper.map(updateVendorDto.getAddress(),Address.class);
 		vendor.setAddress(address);
